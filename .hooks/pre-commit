@@ -1,3 +1,4 @@
 #!/bin/sh
+set -ex
 
-bash scripts/gen-readme.sh
+scripts/gen-readme.sh
