@@ -1,4 +1,5 @@
 # NDK Playground
+#### NOTE: All apps in this repository only compiles for 64-bit systems.
 
 ## [Matoya Test](matoya_test)
 An android app built with [libmatoya](https://github.com/chrisd1100/libmatoya) using the [1-draw.c](https://github.com/chrisd1100/libmatoya/blob/master/examples/1-draw.c) example.

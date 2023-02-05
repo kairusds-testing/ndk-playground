@@ -5,7 +5,8 @@ get_gradle_value(){
 	grep "$1" "$2" | awk '{ print $2 }' | sed "s/\"//g"
 }
 
-out="# NDK Playground\n\n"
+out="# NDK Playground\n"
+out+="#### NOTE: All apps in this repository only compiles for 64-bit systems.\n\n"
 for PROJECT in *
 do
 	manifest="$PROJECT/app/src/main/AndroidManifest.xml"
