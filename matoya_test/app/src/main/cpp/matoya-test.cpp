@@ -10,7 +10,7 @@ struct context{
 
 static void event_func(const MTY_Event *evt, void *opaque)
 {
-	struct context *ctx = opaque;
+	struct context *ctx = (struct context*) opaque;
 
 	MTY_PrintEvent(evt);
 
@@ -20,7 +20,7 @@ static void event_func(const MTY_Event *evt, void *opaque)
 
 static bool app_func(void *opaque)
 {
-	struct context *ctx = opaque;
+	struct context *ctx = (struct context*) opaque;
 
 	// Set up a render description for the PNG
 	MTY_RenderDesc desc ={
@@ -42,8 +42,8 @@ static bool app_func(void *opaque)
 	return !ctx->quit;
 }
 
-int main(int argc, char **argv)
-{
+// int main(int argc, char **argv)
+int main(){
 	struct context ctx ={0};
 	ctx.app = MTY_AppCreate(app_func, event_func, &ctx);
 	if (!ctx.app)
