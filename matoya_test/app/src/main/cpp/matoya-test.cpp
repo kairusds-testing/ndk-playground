@@ -1,5 +1,7 @@
 #include "matoya.h" 
 
+// TODO: Add libmatoya submodule
+
 struct context{
 	MTY_App *app;
 	void *image;
@@ -26,8 +28,8 @@ static bool app_func(void *opaque)
 	MTY_RenderDesc desc ={
 		.format = MTY_COLOR_FORMAT_RGBA,
 		.filter = MTY_FILTER_LINEAR,
-		.effects ={MTY_EFFECT_SCANLINES},
-		.levels ={0.85f},
+		.effects = {MTY_EFFECT_SCANLINES},
+		.levels = {0.85f},
 		.imageWidth = ctx->image_w,
 		.imageHeight = ctx->image_h,
 		.cropWidth = ctx->image_w,
@@ -44,12 +46,12 @@ static bool app_func(void *opaque)
 
 // int main(int argc, char **argv)
 int main(){
-	struct context ctx ={0};
+	struct context ctx = {0};
 	ctx.app = MTY_AppCreate(app_func, event_func, &ctx);
 	if (!ctx.app)
 		return 1;
 
-	MTY_WindowCreate(ctx.app, "My Window", NULL, 0);
+	// MTY_WindowCreate(ctx.app, "My Window", NULL, 0);
 	MTY_WindowSetGFX(ctx.app, 0, MTY_GFX_GL, true);
 
 	// Fetch a PNG from the internet
